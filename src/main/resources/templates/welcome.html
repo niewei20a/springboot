@@ -1,0 +1,1816 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>去哪玩儿</title>
+    <link rel="icon" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link rel="bookmark" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link href='//r.uzaicdn.com/content/libs/iconfont.css' rel='stylesheet'/>
+    <link href='//r03.uzaicdn.com/content/store/styles/common/idangerous.swiper2.7.6.css' rel='stylesheet'/>
+    <link href='//r02.uzaicdn.com/content/store/styles/common/core.css' rel='stylesheet'/>
+    <link href='//r02.uzaicdn.com/content/store/styles/index/index.css' rel='stylesheet'/>
+    <style type="text/css" id="MEIQIA-ICON-STYLE">
+        .MEIQIA-ICON {
+            background-size: 40px auto !important;
+            background-repeat: no-repeat !important;
+            background-image: url('https://resource.meiqia.com/dist/images/icon-mq.png?v=jih3az2eoia') !important;
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
+            .MEIQIA-ICON {
+                background-image: url('https://resource.meiqia.com/dist/images/icon-mq@2x.png?v=jih3az2eoia') !important;
+            }
+        }
+
+        .MEIQIA-ICON-CHAT1 {
+            background-position: 0 0 !important;
+        }
+
+        .MEIQIA-ICON-CHAT2 {
+            background-position: 0 -20px !important;
+        }
+
+        .MEIQIA-ICON-CHAT3 {
+            background-position: 0 -40px !important;
+        }
+
+        .MEIQIA-ICON-CHAT4 {
+            background-position: 0 -60px !important;
+        }
+
+        .MEIQIA-ICON-CHAT5 {
+            background-position: 0 -80px !important;
+        }
+
+        .MEIQIA-ICON-CHAT6 {
+            background-position: 0 -100px !important;
+        }
+
+        .MEIQIA-ICON-CHAT7 {
+            background-position: 0 -120px !important;
+        }
+
+        .MEIQIA-ICON-CHAT8 {
+            background-position: 0 -140px !important;
+        }
+
+        .MEIQIA-ICON-CHAT9 {
+            background-position: 0 -160px !important;
+        }
+
+        .MEIQIA-ICON-CHAT10 {
+            background-position: 0 -180px !important;
+        }
+
+        .MEIQIA-ICON-CHAT11 {
+            background-position: 0 -200px !important;
+        }
+
+        .MEIQIA-ICON-CHAT12 {
+            background-position: 0 -220px !important;
+        }
+
+        .MEIQIA-ICON-TICKET1 {
+            background-position: -20px 0 !important;
+        }
+
+        .MEIQIA-ICON-TICKET2 {
+            background-position: -20px -20px !important;
+        }
+
+        .MEIQIA-ICON-TICKET3 {
+            background-position: -20px -40px !important;
+        }
+
+        .MEIQIA-ICON-TICKET4 {
+            background-position: -20px -60px !important;
+        }
+
+        .MEIQIA-ICON-TICKET5 {
+            background-position: -20px -80px !important;
+        }
+
+        .MEIQIA-ICON-TICKET6 {
+            background-position: -20px -100px !important;
+        }
+
+        .MEIQIA-ICON-TICKET7 {
+            background-position: -20px -120px !important;
+        }
+
+        .MEIQIA-ICON-TICKET8 {
+            background-position: -20px -140px !important;
+        }
+
+        .MEIQIA-ICON-TICKET9 {
+            background-position: -20px -160px !important;
+        }
+
+        .MEIQIA-ICON-TICKET10 {
+            background-position: -20px -180px !important;
+        }
+
+        .MEIQIA-ICON-TICKET11 {
+            background-position: -20px -200px !important;
+        }
+
+        .MEIQIA-ICON-TICKET12 {
+            background-position: -20px -220px !important;
+        } </style>
+    <style type="text/css"
+           id="MEIQIA-INVITE-STYLE">#MEIQIA-INVITE, #MEIQIA-INVITE div, #MEIQIA-INVITE img, #MEIQIA-INVITE a {
+        float: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+
+    #MEIQIA-INVITE {
+        display: none;
+        position: fixed;
+        margin: -105px 0 0 -210px;;
+        top: 50%;
+        left: 50%;
+        z-index: 2147483647;
+        width: 420px;
+        height: 210px;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-BG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTIONS {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTION-0 {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 357px;
+        height: 210px;
+        cursor: pointer;
+        background-image: url(about:blank);
+    / / 解决 IE10 以下空的 absolute a 标签无法响应 click 的问题
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTION-1 {
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 359px;
+        width: 62px;
+        height: 19px;
+        cursor: pointer;
+        background-image: url(about:blank);
+    / / 解决 IE10 以下空的 absolute a 标签无法响应 click 的问题
+    }  </style>
+    <style type="text/css" id="MEIQIA-BTN-STYLE">#MEIQIA-BTN-HOLDER {
+        display: none;
+        position: fixed;
+        bottom: 350px;
+        right: 0px;
+        z-index: 2147483647;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        background-color: transparent;
+    }
+
+    #MEIQIA-BTN, #MEIQIA-BTN span, #MEIQIA-BTN div, #MEIQIA-BTN img {
+        float: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+
+    #MEIQIA-BTN {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BTN-PICTURE {
+        display: block;
+        border: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-CIRCLE {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE {
+        position: absolute;
+        bottom: 0;
+        display: none;
+        width: 260px;
+        border: 1px solid #f7f7f7;
+        border-radius: 4px;
+        color: #000;
+        text-align: left;
+        box-shadow: 0 0 14px 0 rgba(0, 0, 0, .16);
+        line-height: 1.428571429;
+        background-color: #fff;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW1 {
+        position: absolute;
+        z-index: 2;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW2 {
+        position: absolute;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE {
+        left: 0;
+        margin-left: -274px;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW1 {
+        right: -8px; /*top: 42px;*/
+        bottom: 20px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 8px solid #fff;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW2 {
+        right: -10px; /*top: 43px;*/
+        bottom: 21px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 9px solid #f7f7f7;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-CLOSE {
+        position: absolute;
+        display: none;
+        top: 12px;
+        right: 12px;
+        width: 10px;
+        height: 10px;
+        background-position: -5px -245px;
+        cursor: pointer;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE:hover #MEIQIA-BUBBLE-CLOSE {
+        display: block;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-INSIDE {
+        margin: 12px 18px;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-AVATAR {
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        margin-right: 6px;
+        vertical-align: top;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .15);
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-NAME {
+        display: inline-block;
+        margin-top: 3px;
+        font-size: 16px;
+        color: #000;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-MSG {
+        height: 40px;
+        margin-top: 5px;
+        font-size: 14px;
+        overflow: hidden;
+        color: #000;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-MSG img {
+        width: 16px;
+        height: 16px;
+    } </style>
+    <style type="text/css" id="MEIQIA-PANEL-STYLE">#MEIQIA-PANEL-HOLDER {
+        position: fixed;
+        bottom: 0;
+        right: 60px;
+        z-index: -1;
+        width: 320px;
+        height: 480px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        visibility: hidden;
+        background-color: transparent;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+        border: 1px solid #eee \0;
+        *border: 1px solid #eee;
+    }
+
+    #MEIQIA-IFRAME {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        float: none;
+        background: none;
+    } </style>
+</head>
+<body>
+<div class="publicTopW">
+    <div class="common_top">
+        <div class="top_m">
+            <div class="top_m_r"><a href="#" target="_blank"><i class="iconfont icon-vip"></i>
+                会员俱乐部</a><a
+                    href="//u.uzai.com/personal/myorder" target="_blank" class="paddl26">我的订单</a><a
+                    href="//www.uzai.com/aboutus/salesnetwork"
+                    target="_blank" class="paddl26 red">营业网点</a>
+                <div class="top_server"><a href="#">服务中心 <i class="iconfont icon-zhankai"></i><i
+                        class="iconfont icon-shouqi"></i></a>
+                    <div class="clear"></div>
+                    <div class="ul"><a href="//www.uzai.com/aboutus/companyprofile" target="_blank">关于我们</a><a
+                            href="//www.uzai.com/aboutus/businesscooperation"
+                            target="_blank">商务合作</a><a href="//www.uzai.com/aboutus/contactus"
+                                                       target="_blank">联系我们</a><a href="//www.uzai.com/aboutus/joinus"
+                                                                                  target="_blank">诚聘英才</a></div>
+                </div>
+            </div>
+            <div class="top_m_l"><a href="//u.uzai.com/reg/login"><i class="iconfont icon-yonghu"></i>登录</a><a
+                    class="paddl0">|</a><a
+                    href="//u.uzai.com/reg/register_one"><i class="iconfont icon-zhuce"></i>注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="common_head">
+        <a href="#"><img src="http://source.qunarzz.com/common/hf/logo.png" class="logo"/></a>
+        <div class="search">
+            <div class="search_bot" onclick="editUser()"><i class="iconfont icon-sousuo"></i></div>
+            <input type="text"
+                   class="search_input" id="index_search_input" attr-href="https://search.uzai.com/all/1/0/0/s0-f1/"
+                   placeholder="年中618 立减￥618"/><input
+                type="hidden" id="index_search_input_last_value"/>
+            <div id="searchQuickInput"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <form  method="post" id="deleteEmpForm" >
+        <input type="hidden" name="_method" />
+    </form>
+    <script>
+        function editUser(){
+           var key =  $("#index_search_input").val();
+            $("#deleteEmpForm").attr("action","/search/"+key).submit();
+        }
+    </script>
+    <div class="common_nav">
+        <ul>
+            <li id="channel_1"><a th:href="@{/trip}"><i class="iconfont icon-yuandian"></i>首页</a></li>
+            <li id="channel_2"><a href="#"><i class="iconfont icon-yuandian"></i>自驾游</a></li>
+            <li id="channel_3"><a href="#"><i class="iconfont icon-yuandian"></i>国内游</a></li>
+            <li id="channel_4"><a href="#"><i class="iconfont icon-yuandian"></i>出境游</a></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="ul" style="display: none;"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="main2">
+        <div class="main2_top">
+            <a href="" style=visibility:hidden class="more" target="_blank">
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+            <div class="main2_top_nav">
+                <div class="main2_top_li active" attr-href="">暑期爆款</div>
+                <div class="main2_top_li " attr-href="">千岛湖</div>
+                <div class="main2_top_li " attr-href="">上海</div>
+                <div class="main2_top_li " attr-href="">杭州</div>
+            </div>
+            <i class="iconfont icon-youbian"></i><b>自驾游</b><span>品质保证 价格透明</span>
+        </div>
+        <div class="main">
+            <div class="main2_m template1">
+                <a href=https://search.uzai.com/欧洲/1/0/0/s0-f1/ target="_blank" class="main2_m_left"
+                   style="background:url(https://img9.uzaicdn.com/uz/navigation/productFloor/ATT0000967154.jpg?imageView2/2/w/285/h/558) no-repeat center bottom">
+                </a>
+                <div class="main2_m_right">
+                    <div class="main2_m_right_list clearfix ">
+                        <a th:each="TripShort:${trips}" class="li" target="_blank">
+                            <img onerror="nofind()" class="lazy"
+                                 th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                                 th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                            <p th:text="${TripShort.getTitle()}">
+                            </p>
+                            <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                            <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                        </a>
+                    </div>
+                    <div class="main2_m_right_list clearfix hidden">
+                        <a th:each="TripShort:${qianTrips}" class="li" target="_blank">
+                            <img onerror="nofind()" class="lazy"
+                                 th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                                 th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                            <p th:text="${TripShort.getTitle()}">
+                            </p>
+                            <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                            <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                        </a>
+                    </div>
+                    <div class="main2_m_right_list clearfix hidden">
+                        <a th:each="TripShort:${shangTrips}" class="li" target="_blank">
+                            <img onerror="nofind()" class="lazy"
+                                 th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                                 th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                            <p th:text="${TripShort.getTitle()}">
+                            </p>
+                            <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                            <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                        </a>
+                    </div>
+                    <div class="main2_m_right_list clearfix hidden">
+                        <a th:each="TripShort:${hangTrips}" class="li" target="_blank">
+                            <img onerror="nofind()" class="lazy"
+                                 th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                                 th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                            <p th:text="${TripShort.getTitle()}">
+                            </p>
+                            <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                            <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="banner_slide swiper-container2">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" style="display: block;" href="#" target="_blank">
+                <img onerror="nofind()"
+                     src="https://img5.uzaicdn.com/uz/advertisement/ATT0000967165.jpg?imageView2/2/w/1140/h/100/interlace/1">
+            </a>
+        </div>
+        <div class="pagination2">
+            <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch active"></span>
+        </div>
+    </div>
+    <div class="main2">
+        <div class="main2_top">
+            <a href="" style="visibility:hidden" class="more" target="_blank">
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+            <div class="main2_top_nav">
+                <div class="main2_top_li active" attr-href=""
+                     style="color: rgb(229, 0, 79); border-color: rgb(229, 0, 79);">国内爆款
+                </div>
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">巴厘岛</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">普吉岛</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">沙巴/长滩岛</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">泰国</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">新加坡</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">一家一团</div>-->
+            </div>
+            <i class="iconfont icon-youbian" style="color: rgb(229, 0, 79);"></i><b>国内游</b><span>大好河山 等你来游</span>
+        </div>
+        <div class="main2_m template1">
+            <a href="https://search.uzai.com/美洲/1/0/0/s0-f1/" target="_blank" class="main2_m_left"
+               style="background:url(https://img5.uzaicdn.com/uz/navigation/productFloor/ATT0000967158.jpg?imageView2/2/w/285/h/558) no-repeat center bottom">
+            </a>
+            <div class="main2_m_right">
+                <div class="main2_m_right_list clearfix ">
+                    <a th:each="TripShort:${listNations}" class="li" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                             th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                        <p th:text="${TripShort.getTitle()}">
+                        </p>
+                        <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                        <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                    </a>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<*巴厘岛半自由行4晚6日>4晚国际4星酒店套房连住，贝妮达蓝梦双岛出海，网红打卡恶魔眼泪，SPA+下午茶，1天自由活动"
+                       href="https://www.uzai.com/tours/00014208.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000957691.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;*巴厘岛半自由行4晚6日&gt;4晚国际4星酒店套房连住，贝妮达蓝梦双岛出海，网红打卡恶魔眼泪，SPA+下午茶，1天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>3181<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<肆巴厘半自由行5晚7日 图蓝本体验深潜>图蓝本体验深潜，5晚网评五星酒店，贝妮达岛+蓝梦岛，SWING大秋千+鸟巢+恶魔眼泪+梦幻沙滩"
+                       href="https://www.uzai.com/tours/00013816.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000949272.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;肆巴厘半自由行5晚7日 图蓝本体验深潜&gt;图蓝本体验深潜，5晚网评五星酒店，贝妮达岛+蓝梦岛，SWING大秋千+鸟巢+恶魔眼泪+梦幻沙滩
+                        </p>
+                        <div class="price"><em>¥</em>6162<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【网红版】悦蓝巴厘岛半自由行4晚6日 纯玩无购物>4晚国际四星套房，TR CLUB+秘密花园鸟巢+网红瀑布+无边泳池，双岛出海一日游，1天自由活动"
+                       href="https://www.uzai.com/tours/00015092.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000949273.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【网红版】悦蓝巴厘岛半自由行4晚6日 纯玩无购物&gt;4晚国际四星套房，TR CLUB+秘密花园鸟巢+网红瀑布+无边泳池，双岛出海一日游，1天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>3681<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li"
+                       title="<独墅巴厘岛半自由行5晚7日 2晚五星泻湖景观独栋别墅+3晚五星度假村>丛林探险世界五合一，蓝梦岛天堂海沙滩俱乐部出海一日游，LULU SPA两小时，两天自由活动"
+                       href="https://www.uzai.com/tours/00015128.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000949274.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;独墅巴厘岛半自由行5晚7日 2晚五星泻湖景观独栋别墅+3晚五星度假村&gt;丛林探险世界五合一，蓝梦岛天堂海沙滩俱乐部出海一日游，LULU SPA两小时，两天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>4862<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<悦蓝巴厘岛网红版半自由行5晚7日>5晚国际四星套房酒店，金巴兰日落+乌布梯田下午茶，双岛出海一日游，2天自由活动，特色美食"
+                       href="https://www.uzai.com/tours/00014431.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000949269.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;悦蓝巴厘岛网红版半自由行5晚7日&gt;5晚国际四星套房酒店，金巴兰日落+乌布梯田下午茶，双岛出海一日游，2天自由活动，特色美食
+                        </p>
+                        <div class="price"><em>¥</em>3981<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<巴厘岛自由行5晚7日>选择合适的航班，敲定喜欢的酒店，约上三五好友，说走就走，探寻神秘的BALI，畅游人间天堂岛，你的旅程"
+                       href="https://www.uzai.com/tours/00012254.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000889785.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;巴厘岛自由行5晚7日&gt;选择合适的航班，敲定喜欢的酒店，约上三五好友，说走就走，探寻神秘的BALI，畅游人间天堂岛，你的旅程
+                        </p>
+                        <div class="price"><em>¥</em>5799<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<优品 艇进普吉6/7日 _美食版>双体帆船游艇,海边国际五星酒店,普吉五星SPA,一天自由活动,普吉五大美食主题"
+                       href="https://www.uzai.com/tours/00005508.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000524690.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;优品 艇进普吉6/7日 _美食版&gt;双体帆船游艇,海边国际五星酒店,普吉五星SPA,一天自由活动,普吉五大美食主题
+                        </p>
+                        <div class="price"><em>¥</em>5380<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【海航直飞】普吉岛CLUB MED自由行5晚7日>入住Club Med ，一价全包，中文GO为您服务，每晚GO主题秀，儿童俱乐部，环球自助美食"
+                       href="https://www.uzai.com/tours/00010980.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000933948.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【海航直飞】普吉岛CLUB MED自由行5晚7日&gt;入住Club Med ，一价全包，中文GO为您服务，每晚GO主题秀，儿童俱乐部，环球自助美食
+                        </p>
+                        <div class="price"><em>¥</em>8081<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【暑假翡翠天堂】泰国普吉岛CLUB MED五晚七天>" href="https://www.uzai.com/tours/00015368.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000933949.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【暑假翡翠天堂】泰国普吉岛CLUB MED五晚七天&gt;
+                        </p>
+                        <div class="price"><em>¥</em>11780<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<墅语 普吉PP版7日>3晚当地五星别墅+2晚当地五星酒店，长尾船游攀牙湾，割喉岛泛舟，快艇出海大小PP岛+珍珠岛"
+                       href="https://www.uzai.com/tours/00010825.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000504411.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;墅语 普吉PP版7日&gt;3晚当地五星别墅+2晚当地五星酒店，长尾船游攀牙湾，割喉岛泛舟，快艇出海大小PP岛+珍珠岛
+                        </p>
+                        <div class="price"><em>¥</em>2381<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<十大保证独墅普吉岛5晚7日>2晚国际五星泳池别墅，3晚国际五星，双SPA按摩，双出海，双浮潜，专业跟拍摄影，私人游艇出海，卡丁车"
+                       href="https://www.uzai.com/tours/00010766.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000762860.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;十大保证独墅普吉岛5晚7日&gt;2晚国际五星泳池别墅，3晚国际五星，双SPA按摩，双出海，双浮潜，专业跟拍摄影，私人游艇出海，卡丁车
+                        </p>
+                        <div class="price"><em>¥</em>4381<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<上新了普吉5日>5晚连住芭东AGODA国际五星，双体帆船游艇巡游神木岛，芭娜娜海豚湾，泰拳表演，宝蓝谷，尼莫海豚馆"
+                       href="https://www.uzai.com/tours/00013534.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000819722.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;上新了普吉5日&gt;5晚连住芭东AGODA国际五星，双体帆船游艇巡游神木岛，芭娜娜海豚湾，泰拳表演，宝蓝谷，尼莫海豚馆
+                        </p>
+                        <div class="price"><em>¥</em>5862<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【北京直飞】长滩岛半自由行4晚6日>七公里白色沙滩，圣母礁岩，星期五海滩，D MALL"
+                       href="https://www.uzai.com/tours/00012519.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855538.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【北京直飞】长滩岛半自由行4晚6日&gt;七公里白色沙滩，圣母礁岩，星期五海滩，D MALL
+                        </p>
+                        <div class="price"><em>¥</em>3780<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【北京直飞】长滩岛半自由行5晚7日>七公里白色沙滩，圣母礁岩，星期五海滩，卢霍山，D MALL"
+                       href="https://www.uzai.com/tours/00012520.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000858447.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【北京直飞】长滩岛半自由行5晚7日&gt;七公里白色沙滩，圣母礁岩，星期五海滩，卢霍山，D MALL
+                        </p>
+                        <div class="price"><em>¥</em>3980<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<畅玩沙巴_超级自由行4晚5天_天津起止>全程入住网评四星酒店，1天体验行程，2天自由活动时间，纯玩无购物自费，赠送旅游意外险"
+                       href="https://www.uzai.com/tours/00014352.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000858452.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;畅玩沙巴_超级自由行4晚5天_天津起止&gt;全程入住网评四星酒店，1天体验行程，2天自由活动时间，纯玩无购物自费，赠送旅游意外险
+                        </p>
+                        <div class="price"><em>¥</em>5380<em>起</em></div>
+                        <div class="departure">天津出发</div>
+                    </a>
+                    <a class="li" title="<一家一团尊享沙巴5晚6天_天津起止>沙比岛+马努干岛，香格里拉丹绒下午茶，美人鱼岛浮潜一日游，市区观光+红树林长鼻猴萤火虫，1天自由活动"
+                       href="https://www.uzai.com/tours/00014496.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000858453.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;一家一团尊享沙巴5晚6天_天津起止&gt;沙比岛+马努干岛，香格里拉丹绒下午茶，美人鱼岛浮潜一日游，市区观光+红树林长鼻猴萤火虫，1天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>7380<em>起</em></div>
+                        <div class="departure">天津出发</div>
+                    </a>
+                    <a class="li" title="<一家一团尊享沙巴4晚5天_天津起止>沙比岛+马努干岛，香格里拉丹绒下午茶，豪华版美人鱼岛浮潜一日游，市区观光+KAWA红树林长鼻猴萤火虫"
+                       href="https://www.uzai.com/tours/00014497.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000858454.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;一家一团尊享沙巴4晚5天_天津起止&gt;沙比岛+马努干岛，香格里拉丹绒下午茶，豪华版美人鱼岛浮潜一日游，市区观光+KAWA红树林长鼻猴萤火虫
+                        </p>
+                        <div class="price"><em>¥</em>7980<em>起</em></div>
+                        <div class="departure">天津出发</div>
+                    </a>
+                    <a class="li" title="<轻奢沙巴_超级自由行5晚6天_天津起止>双岛游(沙比岛+马努干岛) +市区观光+格兰迪酒店下午茶，巧克力DIY+豪华版KLIAS红树林"
+                       href="https://www.uzai.com/tours/00014499.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000858455.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;轻奢沙巴_超级自由行5晚6天_天津起止&gt;双岛游(沙比岛+马努干岛) +市区观光+格兰迪酒店下午茶，巧克力DIY+豪华版KLIAS红树林
+                        </p>
+                        <div class="price"><em>¥</em>5580<em>起</em></div>
+                        <div class="departure">天津出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<一站购物 新*泰传奇无自费5晚7日>【畅销单品】曼谷卧佛寺，快艇日游沙美岛，泰式按摩2小时，56层观光塔，清迈小镇，曼谷唐人街"
+                       href="https://www.uzai.com/tours/00011956.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855578.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;一站购物 新*泰传奇无自费5晚7日&gt;【畅销单品】曼谷卧佛寺，快艇日游沙美岛，泰式按摩2小时，56层观光塔，清迈小镇，曼谷唐人街
+                        </p>
+                        <div class="price"><em>¥</em>3762<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<舌尖上的*泰传奇5晚6日_套房版（西安起止）>快艇日游沙美岛，绿山野生动物园，热带水果园，清迈小镇风情园，骑大象，芭提雅56层观光塔"
+                       href="https://www.uzai.com/tours/00013585.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000909024.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;舌尖上的*泰传奇5晚6日_套房版（西安起止）&gt;快艇日游沙美岛，绿山野生动物园，热带水果园，清迈小镇风情园，骑大象，芭提雅56层观光塔
+                        </p>
+                        <div class="price"><em>¥</em>3899<em>起</em></div>
+                        <div class="departure">西安出发</div>
+                    </a>
+                    <a class="li" title="<【超级旅行团】VIP瑞享艾美 泰国7日>海航直飞，全程入住国际五星酒店，升级一晚艾美高尔夫度假村，丹能莎朵水上市场，游艇出海，2小时泰式按摩"
+                       href="https://www.uzai.com/tours/00009904.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855580.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【超级旅行团】VIP瑞享艾美 泰国7日&gt;海航直飞，全程入住国际五星酒店，升级一晚艾美高尔夫度假村，丹能莎朵水上市场，游艇出海，2小时泰式按摩
+                        </p>
+                        <div class="price"><em>¥</em>6162<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【纯玩】上新了泰传奇6/7日>海航直飞，2晚芭提雅五星度假酒店，1晚国际五星，2晚曼谷网评国际五星，拉差达火车夜市，杜拉拉水上市场"
+                       href="https://www.uzai.com/tours/00012992.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855575.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【纯玩】上新了泰传奇6/7日&gt;海航直飞，2晚芭提雅五星度假酒店，1晚国际五星，2晚曼谷网评国际五星，拉差达火车夜市，杜拉拉水上市场
+                        </p>
+                        <div class="price"><em>¥</em>4962<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【优品】清迈+清莱泰北玫瑰双城记6/7日>国航直飞，白庙，黑庙，大象训练营，宁曼路，清迈夜市无限逛，赠送香格里拉国际五星酒店格调下午茶"
+                       href="https://www.uzai.com/tours/00005455.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855579.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【优品】清迈+清莱泰北玫瑰双城记6/7日&gt;国航直飞，白庙，黑庙，大象训练营，宁曼路，清迈夜市无限逛，赠送香格里拉国际五星酒店格调下午茶
+                        </p>
+                        <div class="price"><em>¥</em>5762<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【至上】【近海繁华_蓝白沙美】TG615_674 泰一地 5晚7天>"
+                       href="https://www.uzai.com/tours/00014316.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000946645.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【至上】【近海繁华_蓝白沙美】TG615_674 泰一地 5晚7天&gt;
+                        </p>
+                        <div class="price"><em>¥</em>5790<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<2019暑期新加坡插班课堂留学生活体验营5晚6日>当地国际学校插班课程，参访南洋理工大学，新加坡动物园，环球影城，肉骨茶+海南鸡饭+娘惹菜"
+                       href="https://www.uzai.com/tours/00014273.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000968345.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;2019暑期新加坡插班课堂留学生活体验营5晚6日&gt;当地国际学校插班课程，参访南洋理工大学，新加坡动物园，环球影城，肉骨茶+海南鸡饭+娘惹菜
+                        </p>
+                        <div class="price"><em>¥</em>16300<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【新航直飞】艇进新加坡半自由行5晚6日>五星航空，入住乌节路国际四星龙都酒店，乘坐双体游艇巡海出游，赠送环球影城门票+新加坡日间动物园门票"
+                       href="https://www.uzai.com/tours/00015490.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000968346.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【新航直飞】艇进新加坡半自由行5晚6日&gt;五星航空，入住乌节路国际四星龙都酒店，乘坐双体游艇巡海出游，赠送环球影城门票+新加坡日间动物园门票
+                        </p>
+                        <div class="price"><em>¥</em>9362<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<暑期新加坡一地超级自由行5晚6日_亲子版>直飞，3天新加坡体验行程，1天自由活动时间，5晚网评四星，含早餐，机场酒店间往返接送，景点酒店往返接"
+                       href="https://www.uzai.com/tours/00015230.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000927085.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;暑期新加坡一地超级自由行5晚6日_亲子版&gt;直飞，3天新加坡体验行程，1天自由活动时间，5晚网评四星，含早餐，机场酒店间往返接送，景点酒店往返接
+                        </p>
+                        <div class="price"><em>¥</em>9980<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<暑期新加坡+新山超级自由行5晚6日_亲子版>精致小团，天天发团，网评四星酒店，乐高乐园，乐高水上乐园，日间动物园，夜间动物园，环球影城，专车接送"
+                       href="https://www.uzai.com/tours/00015227.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000927086.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;暑期新加坡+新山超级自由行5晚6日_亲子版&gt;精致小团，天天发团，网评四星酒店，乐高乐园，乐高水上乐园，日间动物园，夜间动物园，环球影城，专车接送
+                        </p>
+                        <div class="price"><em>¥</em>10980<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li"
+                       title="<【一家一团】*奢享_新加坡+巴淡岛半自由行_直飞5晚6日北京SQ>无购物无自费，2人起发团，海景别墅度假村，巴淡岛享受2晚3天海边假期，新加坡市区观光，2天自由活动"
+                       href="https://www.uzai.com/tours/00012035.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000855570.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【一家一团】*奢享_新加坡+巴淡岛半自由行_直飞5晚6日北京SQ&gt;无购物无自费，2人起发团，海景别墅度假村，巴淡岛享受2晚3天海边假期，新加坡市区观光，2天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>9280<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<新加坡+民丹岛CLUB MED自由行5晚7日>国航直飞，3晚民丹Club Med*房，2晚新加坡五星酒店，CLUBMED度假内吃喝玩乐一站式服务"
+                       href="https://www.uzai.com/tours/00014176.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000863807.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;新加坡+民丹岛CLUB MED自由行5晚7日&gt;国航直飞，3晚民丹Club Med*房，2晚新加坡五星酒店，CLUBMED度假内吃喝玩乐一站式服务
+                        </p>
+                        <div class="price"><em>¥</em>12180<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【一家一团】SWAG巴厘岛半自由行5晚7日>2晚独栋泳池别墅+3晚海边五星酒店，泳池别墅内漂浮早餐，Bali Swing 大秋千/鸟巢"
+                       href="https://www.uzai.com/tours/00010474.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000715355.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【一家一团】SWAG巴厘岛半自由行5晚7日&gt;2晚独栋泳池别墅+3晚海边五星酒店，泳池别墅内漂浮早餐，Bali Swing 大秋千/鸟巢
+                        </p>
+                        <div class="price"><em>¥</em>9680<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【全国出发】【一家一团】澳式*_东海岸线系列7日/9日12日>悉尼，墨尔本，黄金海岸，布里斯班，凯恩斯"
+                       href="https://www.uzai.com/tours/00011873.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000715358.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【全国出发】【一家一团】澳式*_东海岸线系列7日/9日12日&gt;悉尼，墨尔本，黄金海岸，布里斯班，凯恩斯
+                        </p>
+                        <div class="price"><em>¥</em>11800<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【全国出发】【一家一团】澳式* 塔斯马尼亚系列13日>悉尼歌剧院，悉尼海港大桥，邦迪海滩，霍巴特，惠灵顿山，  里士满镇，亚瑟港监狱遗址，费辛娜半岛"
+                       href="https://www.uzai.com/tours/00011877.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000819703.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【全国出发】【一家一团】澳式* 塔斯马尼亚系列13日&gt;悉尼歌剧院，悉尼海港大桥，邦迪海滩，霍巴特，惠灵顿山， 里士满镇，亚瑟港监狱遗址，费辛娜半岛
+                        </p>
+                        <div class="price"><em>¥</em>22800<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【全国出发】【一家一团】澳式* 南澳系列9日/11日/12日>阿德莱德， 袋鼠岛，巴罗莎"
+                       href="https://www.uzai.com/tours/00011874.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000650204.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【全国出发】【一家一团】澳式* 南澳系列9日/11日/12日&gt;阿德莱德， 袋鼠岛，巴罗莎
+                        </p>
+                        <div class="price"><em>¥</em>20800<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li"
+                       title="<【一家一团】*奢享_新加坡+巴淡岛半自由行_直飞5晚6日北京SQ>无购物无自费，2人起发团，海景别墅度假村，巴淡岛享受2晚3天海边假期，新加坡市区观光，2天自由活动"
+                       href="https://www.uzai.com/tours/00012035.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000880144.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【一家一团】*奢享_新加坡+巴淡岛半自由行_直飞5晚6日北京SQ&gt;无购物无自费，2人起发团，海景别墅度假村，巴淡岛享受2晚3天海边假期，新加坡市区观光，2天自由活动
+                        </p>
+                        <div class="price"><em>¥</em>9280<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【全国出发】【一家一团】澳式* 乌鲁鲁系列9日>Skyrail，库兰达小火车，绝代双礁，寂静之声沙漠星空晚餐，乌鲁鲁原野星光展，悉尼蓝山，悉尼歌剧院"
+                       href="https://www.uzai.com/tours/00011876.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000880143.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【全国出发】【一家一团】澳式* 乌鲁鲁系列9日&gt;Skyrail，库兰达小火车，绝代双礁，寂静之声沙漠星空晚餐，乌鲁鲁原野星光展，悉尼蓝山，悉尼歌剧院
+                        </p>
+                        <div class="price"><em>¥</em>25800<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="main2">
+        <div class="main2_top">
+            <a href="" style="visibility:hidden" class="more" target="_blank">
+                <i class="iconfont icon-gengduo"></i>
+            </a>
+            <div class="main2_top_nav">
+                <div class="main2_top_li active" attr-href=""
+                     style="color: rgb(229, 0, 79); border-color: rgb(229, 0, 79);">出境爆款
+                </div>
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">陕西/宁夏/甘肃</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">北京及周边</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">云南/海南</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">广西/贵州/山东</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">四川/湖北/湖南</div>-->
+                <!--                <div class="main2_top_li " attr-href="" style="color: rgb(102, 102, 102); border-color: rgb(243, 243, 243);">新疆/青海</div>-->
+            </div>
+            <i class="iconfont icon-youbian" style="color: rgb(229, 0, 79);"></i><b>出境游</b><span>你的旅行 由你做主</span>
+        </div>
+        <div class="main2_m template1">
+            <a href="https://www.uzai.com/lvyoucn/bj/" target="_blank" class="main2_m_left"
+               style="background:url(https://img7.uzaicdn.com/uz/navigation/productFloor/ATT0000967156.jpg?imageView2/2/w/285/h/558) no-repeat center bottom">
+            </a>
+            <div class="main2_m_right">
+                <div class="main2_m_right_list clearfix ">
+                    <a th:each="TripShort:${listNations}" class="li" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             th:data-original="@{'/image_cache/'+${TripShort.getPicture()}}"
+                             th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: inline;">
+                        <p th:text="${TripShort.getTitle()}">
+                        </p>
+                        <div class="price"><em>¥</em><em th:text="${TripShort.getPrice()}+'起'"></em></div>
+                        <div class="departure" th:text="${TripShort.getCity()}+'出发'"></div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【长安DIY】兵马俑钟鼓楼回民街华清池双高4日游3晚4日>" href="https://www.uzai.com/tours/00014050.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000918280.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【长安DIY】兵马俑钟鼓楼回民街华清池双高4日游3晚4日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2360<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【梦回南泥湾】西安+秦始皇兵马俑+黄河壶口瀑布+南泥湾+延安*+大雁塔+汉城湖 双卧6日无购物>"
+                       href="https://www.uzai.com/tours/00015122.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000918279.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【梦回南泥湾】西安+秦始皇兵马俑+黄河壶口瀑布+南泥湾+延安*+大雁塔+汉城湖 双卧6日无购物&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2599<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【秦俑情】西安+秦始皇兵马俑+唐华清宫+大雁塔+赠送华阴老腔+钟鼓楼广场+回民街 双卧4日无购物>"
+                       href="https://www.uzai.com/tours/00015123.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000918278.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【秦俑情】西安+秦始皇兵马俑+唐华清宫+大雁塔+赠送华阴老腔+钟鼓楼广场+回民街 双卧4日无购物&gt;
+                        </p>
+                        <div class="price"><em>¥</em>1899<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【西安腔调】秦兵马俑+壶口瀑布+延安+唐华清宫+大雁塔+黄帝陵+轩辕庙+赠送华阴老腔 双卧6日>"
+                       href="https://www.uzai.com/tours/00015614.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000972810.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【西安腔调】秦兵马俑+壶口瀑布+延安+唐华清宫+大雁塔+黄帝陵+轩辕庙+赠送华阴老腔 双卧6日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2299<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【宁夏大不同】宁夏沙坡头+镇北堡影视城+水洞沟+通湖草原+民俗博物馆+石锅鱼宴 双卧5日无自费>"
+                       href="https://www.uzai.com/tours/00014662.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000953327.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【宁夏大不同】宁夏沙坡头+镇北堡影视城+水洞沟+通湖草原+民俗博物馆+石锅鱼宴 双卧5日无自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2199<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【福寿夕阳红】北京成团畅游甘肃+青海+宁夏+三省经典连线+往返中下铺 双卧10日0购物0自费>"
+                       href="https://www.uzai.com/tours/00014669.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000918275.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【福寿夕阳红】北京成团畅游甘肃+青海+宁夏+三省经典连线+往返中下铺 双卧10日0购物0自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>4399<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【热卖】天安门广场_故宫_八达岭长城_鸟巢1日游>" href="https://www.uzai.com/tours/00012271.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000955316.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【热卖】天安门广场_故宫_八达岭长城_鸟巢1日游&gt;
+                        </p>
+                        <div class="price"><em>¥</em>215<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<密云古北水镇 司马台长城直通车一日游0晚1日>" href="https://www.uzai.com/tours/00012472.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000964363.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;密云古北水镇 司马台长城直通车一日游0晚1日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>318<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<古北水镇 夜游司马台缆车俯瞰水镇全景一日游0晚1日>" href="https://www.uzai.com/tours/00012482.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000880159.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;古北水镇 夜游司马台缆车俯瞰水镇全景一日游0晚1日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>368<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<北京密云日光山谷房车自驾两日游（自由行）1晚2日>" href="https://www.uzai.com/tours/00015030.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000955317.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;北京密云日光山谷房车自驾两日游（自由行）1晚2日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>962<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<木兰围场乌兰布统大草原 塞罕坝森林公园 京北草原全景三日游2晚3日>"
+                       href="https://www.uzai.com/tours/00015541.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000955318.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;木兰围场乌兰布统大草原 塞罕坝森林公园 京北草原全景三日游2晚3日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>538<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<北京周边 密云古北水镇童玩亲子直通车一日游 0晚1日>" href="https://www.uzai.com/tours/00010472.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000548577.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;北京周边 密云古北水镇童玩亲子直通车一日游 0晚1日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>328<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【花间糖】云南昆明+大理+特色药膳火锅+丽江+玉龙雪山纯玩 双飞一动5晚6日>"
+                       href="https://www.uzai.com/tours/00014692.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000919786.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【花间糖】云南昆明+大理+特色药膳火锅+丽江+玉龙雪山纯玩 双飞一动5晚6日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>4660<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【众信一家一团】云南腾冲芒市+勐焕大金塔+瑞丽+云峰山+龙江竹筏漂流+和顺古镇 双飞5日>"
+                       href="https://www.uzai.com/tours/00014357.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000870089.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【众信一家一团】云南腾冲芒市+勐焕大金塔+瑞丽+云峰山+龙江竹筏漂流+和顺古镇 双飞5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>4499<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【阳光三亚零购】海南三亚分界洲岛+大小洞天+天涯+槟榔谷4晚5日无购物4晚5日>"
+                       href="https://www.uzai.com/tours/00013553.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000880179.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【阳光三亚零购】海南三亚分界洲岛+大小洞天+天涯+槟榔谷4晚5日无购物4晚5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2850<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【相遇克拉_三亚湾克拉码头酒店精选豪华海景房】北京三亚往返自由行4晚5日>"
+                       href="https://www.uzai.com/tours/00012602.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000880177.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【相遇克拉_三亚湾克拉码头酒店精选豪华海景房】北京三亚往返自由行4晚5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3300<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【王者盛宴】海南三亚南山+天涯+分界洲+槟榔谷+玫瑰谷双飞4晚5日无自费>"
+                       href="https://www.uzai.com/tours/00009755.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000766139.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【王者盛宴】海南三亚南山+天涯+分界洲+槟榔谷+玫瑰谷双飞4晚5日无自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3020<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【三亚精品希尔顿】海南三亚蜈支洲南山天涯呀诺达大东海4晚5日无购物4晚5日>"
+                       href="https://www.uzai.com/tours/00014686.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000919797.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【三亚精品希尔顿】海南三亚蜈支洲南山天涯呀诺达大东海4晚5日无购物4晚5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3120<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【荣耀桂林】豪华五星+桂林+印象刘三姐+大漓江游船+遇龙河漂流+世外桃源+古东瀑布 双高5日>"
+                       href="https://www.uzai.com/tours/00015115.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000927106.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【荣耀桂林】豪华五星+桂林+印象刘三姐+大漓江游船+遇龙河漂流+世外桃源+古东瀑布 双高5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>4599<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【秘境恋歌】五星桂林+印象刘三姐+大漓江游船+世外桃源+古东瀑布+银子岩+1晚泳池酒店 双高5日>"
+                       href="https://www.uzai.com/tours/00015124.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000933986.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【秘境恋歌】五星桂林+印象刘三姐+大漓江游船+世外桃源+古东瀑布+银子岩+1晚泳池酒店 双高5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3299<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【梵天净土 】北京+铜仁+梵净山+亚木沟+镇远古镇+西江千户苗寨+荔波小七孔+黄果树瀑布双飞6天5晚>"
+                       href="https://www.uzai.com/tours/00014833.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000898943.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【梵天净土 】北京+铜仁+梵净山+亚木沟+镇远古镇+西江千户苗寨+荔波小七孔+黄果树瀑布双飞6天5晚&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2699<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【隐觅贵州】黄果树大瀑布荔波大小七孔西江千户苗寨下司古镇双卧8日游7晚8日>"
+                       href="https://www.uzai.com/tours/00015038.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000911311.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【隐觅贵州】黄果树大瀑布荔波大小七孔西江千户苗寨下司古镇双卧8日游7晚8日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2990<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【舌尖上的半岛享尽美食】山东省+青岛信号山+威海刘公岛+烟台+养马岛+蓬莱双高5日游4晚5日>"
+                       href="https://www.uzai.com/tours/00015397.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000974655.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【舌尖上的半岛享尽美食】山东省+青岛信号山+威海刘公岛+烟台+养马岛+蓬莱双高5日游4晚5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2120<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<山东省+烟台蓬莱阁+威海刘公岛+青岛崂山+ VIP小包团+ 双高4日3晚4日>"
+                       href="https://www.uzai.com/tours/00015416.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img8.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000974653.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;山东省+烟台蓬莱阁+威海刘公岛+青岛崂山+ VIP小包团+ 双高4日3晚4日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2270<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【荣耀西蜀】22人精致小团成都+乐山+峨眉山+青城山+都江堰+陆地2+1大巴 双飞5日>"
+                       href="https://www.uzai.com/tours/00014335.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000853179.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【荣耀西蜀】22人精致小团成都+乐山+峨眉山+青城山+都江堰+陆地2+1大巴 双飞5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3299<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【行色有稻】11人精致小团成都+色达+五明佛学院+稻城亚丁+新都桥+观音桥+雪鱼火锅 双飞9日>"
+                       href="https://www.uzai.com/tours/00015147.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000920243.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【行色有稻】11人精致小团成都+色达+五明佛学院+稻城亚丁+新都桥+观音桥+雪鱼火锅 双飞9日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>5899<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【神农架VS恩施】神农架+昭君别院+三峡大瀑布+恩施大峡谷+野三峡+黄鹤桥峰林+土司城双卧9日>"
+                       href="https://www.uzai.com/tours/00013868.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000808792.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【神农架VS恩施】神农架+昭君别院+三峡大瀑布+恩施大峡谷+野三峡+黄鹤桥峰林+土司城双卧9日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3550<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【峦山倾城】湖南长沙韶山张家界凤凰黄龙洞天门山玻璃栈道 双卧6日游5晚6日>"
+                       href="https://www.uzai.com/tours/00009785.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000900988.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【峦山倾城】湖南长沙韶山张家界凤凰黄龙洞天门山玻璃栈道 双卧6日游5晚6日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2580<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<湖南+张家界+凤凰+天门山+黄龙洞双高4晚5日>" href="https://www.uzai.com/tours/00011717.html"
+                       target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000900989.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;湖南+张家界+凤凰+天门山+黄龙洞双高4晚5日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2680<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【一价全含】长沙+韶山+张家界+天门山+凤凰 高铁往返5晚6日>"
+                       href="https://www.uzai.com/tours/00013047.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000909045.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【一价全含】长沙+韶山+张家界+天门山+凤凰 高铁往返5晚6日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3240<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="main2_m_right_list clearfix hidden">
+                    <a class="li" title="<【荣耀疆禾 豪华2+1头等舱大巴】新疆25人精致小团天山天池+喀纳斯+禾木+胡杨林 双飞8日无自费>"
+                       href="https://www.uzai.com/tours/00010906.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img9.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000860979.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【荣耀疆禾 豪华2+1头等舱大巴】新疆25人精致小团天山天池+喀纳斯+禾木+胡杨林 双飞8日无自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3799<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【五星盛宴】新疆天山天池+喀纳斯+白沙湖+南山牧场+1晚温泉酒店+赠送民族歌舞表演 双飞8日>"
+                       href="https://www.uzai.com/tours/00011270.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000860980.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【五星盛宴】新疆天山天池+喀纳斯+白沙湖+南山牧场+1晚温泉酒店+赠送民族歌舞表演 双飞8日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3799<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【五星盛宴】新疆天山天池+喀纳斯+白沙湖+南山牧场+1晚温泉酒店+赠送民族歌舞表演 双卧10日>"
+                       href="https://www.uzai.com/tours/00011268.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img6.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000875166.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【五星盛宴】新疆天山天池+喀纳斯+白沙湖+南山牧场+1晚温泉酒店+赠送民族歌舞表演 双卧10日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>2599<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【众信青海包团】青海范儿青海湖骑行+茶卡盐湖+藏传佛教塔尔寺+互助土族风情园 双飞6日无自费>"
+                       href="https://www.uzai.com/tours/00014533.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000860976.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【众信青海包团】青海范儿青海湖骑行+茶卡盐湖+藏传佛教塔尔寺+互助土族风情园 双飞6日无自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3999<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【花儿骑遇】*纯玩青海湖骑行+茶卡盐湖+塔尔寺+祁连卓尔山+草原下午茶+门源 双卧7日>"
+                       href="https://www.uzai.com/tours/00015309.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img7.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000927119.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【花儿骑遇】*纯玩青海湖骑行+茶卡盐湖+塔尔寺+祁连卓尔山+草原下午茶+门源 双卧7日&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3699<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <a class="li" title="<【九色鹿】兰州+青海湖+茶卡盐湖+塔尔寺+贵德丹霞+互助土族园+特色小罐茶 双飞6日0购物0自费>"
+                       href="https://www.uzai.com/tours/00015145.html" target="_blank">
+                        <img onerror="nofind()" class="lazy"
+                             data-original="https://img5.uzaicdn.com/uz/navigation/productFloorRecommend/ATT0000927118.jpg?imageView2/2/w/263/h/197"
+                             src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                        <p>
+                            &lt;【九色鹿】兰州+青海湖+茶卡盐湖+塔尔寺+贵德丹霞+互助土族园+特色小罐茶 双飞6日0购物0自费&gt;
+                        </p>
+                        <div class="price"><em>¥</em>3599<em>起</em></div>
+                        <div class="departure">北京出发</div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="common_foot">
+    <ul>
+        <li><i class="iconfont icon-chanpinyouzhi"></i> 产品优质</li>
+        <li><i class="iconfont icon-xinxitouming"></i> 信息透明</li>
+        <li><i class="iconfont icon-yueding"></i> 履行约定</li>
+        <li><i class="iconfont icon-weihuquanyi"></i> 维护权益</li>
+        <li><i class="iconfont icon-xianhangpeifu"></i> 先行赔付</li>
+    </ul>
+</div>
+<div class="qn_footer">
+    <style type="text/css">
+        .qn_footer .copyright {
+            padding: 7px 0 0;
+            line-height: 22px;
+            margin: 0;
+        }
+
+        .qn_footer .copyright span, .qn_footer .copyright a, .qn_footer .copyright a:visited {
+            margin-right: 7px;
+            padding: 2px 0;
+            color: #999;
+            text-decoration: none;
+        }
+
+        .qn_footer .copyright .s24 {
+            background: url(//source.qunarzz.com/common/hf/24h.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .qn_footer .fh-about {
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            width: 110px;
+            text-align: left;
+            border: 1px solid transparent;
+            _border: 0;
+            _padding: 1px;
+            white-space: nowrap;
+        }
+
+        .qn_footer .fh-about a {
+            padding-left: 6px;
+        }
+
+        .qn_footer .fh-about .about-link {
+            margin: 0;
+            *zoom: 1;
+        }
+
+        .qn_footer .fh-about.hover {
+            border: 1px solid #ddd;
+            padding: 0;
+            z-index: 999;
+            background: #fff;
+        }
+
+        .qn_footer .fh-about.hover .about-link {
+            color: #ff9e5e;
+            margin: 0;
+        }
+
+        .qn_footer .fh-about.hover .fh-list {
+            display: block !important;
+        }
+
+        .qn_footer .fh-about .fh-list {
+            position: absolute;
+            left: -1px;
+            bottom: 22px;
+            border: 1px solid #ddd;
+            background: #fff;
+            width: 110px;
+            display: none;
+            white-space: normal;
+        }
+
+        .qn_footer .fh-about .fh-list a {
+            display: block;
+            margin: 0;
+            *margin: 0 !important;
+            *width: 70%;
+        }
+
+        .qn_footer .fh-about .fh-list a:hover {
+            color: #666;
+            background: #e2e2e2;
+            *background: #fff;
+            *color: #ff9e5e;
+        }
+
+        .qn_footer .fh-about i {
+            font-size: 0;
+            background: url(//source.qunarzz.com/common/hf/arc.png) no-repeat left bottom;
+            width: 7px;
+            height: 4px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin: 0 0 2px 3px;
+        }
+
+        .qn_footer .fh-about.hover i {
+            background-position: 0 0;
+        }
+
+        .qn_footer .fh-list-wrapper {
+            height: 0;
+            position: relative;
+            z-index: 999;
+            *float: left;
+        }
+
+        .qn_footer {
+            clear: both;
+            margin: 0 auto;
+            padding: 15px 0 25px;
+            width: 979px;
+            line-height: 1.231;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #848484;
+        }
+
+        .qn_footer .inner {
+            margin: 0 10px;
+            text-align: right;
+        }
+
+        .qn_footer .gs {
+            float: right;
+            margin: 0 20px 0 0;
+        }
+
+        .qn_footer .cr {
+            margin-right: 0;
+            padding-bottom: 11px;
+            text-align: center;
+        }
+
+        .qn_footer .links {
+            margin: 0;
+            padding: 2px 0 0;
+            list-style: none;
+            color: #999;
+            display: block;
+        }
+
+        .qn_footer .links span {
+            *display: inline;
+            *zoom: 1;
+        }
+
+        .qn_footer .links a,
+        .qn_footer .links a:visited {
+            padding: 0 5px;
+            margin: 0;
+            text-decoration: none;
+            color: #999;
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            height: 22px;
+            line-height: 22px;
+            white-space: nowrap;
+        }
+
+        .qn_footer .links a:hover {
+            color: #f60;
+        }
+
+        .qn_footer .links a.hl,
+        .qn_footer .links a.hl:visited {
+            color: #ff5555;
+        }
+
+        .qn_footer .clr {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .qn_footer .f_imglist {
+            margin-bottom: 10px;
+        }
+
+        .qn_footer .f_imglist ul {
+            width: 442px;
+            margin: 0 auto;
+            padding-bottom: 4px;
+            overflow: hidden;
+        }
+
+        .qn_footer .f_imglist li {
+            float: left;
+            margin-right: 10px;
+            display: inline;
+        }
+
+        .qn_footer .f_imglist li a {
+            display: block;
+            width: 100%;
+            height: 30px;
+        }
+
+        .qn_footer .f_imglist li a span, .qn_footer .f_imglist li.f_icon_pata span {
+            position: relative;
+            z-index: -1;
+            color: #0086A0;
+        }
+
+        .qn_footer .f_imglist .f_icon_cnnic {
+            width: 88px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -431px 0 no-repeat;
+            margin-right: 0;
+        }
+
+        .qn_footer .f_imglist .f_icon_ec {
+            width: 87px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -339px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_beian {
+            width: 78px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -256px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_itrust {
+            width: 91px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -160px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_pci {
+            width: 49px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -106px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_verisign {
+            width: 101px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) 0 0 no-repeat;
+        }
+
+        .seo {
+            border-top: 1px solid #ddd;
+        }
+
+        .seo .seo_links {
+            clear: both;
+            margin: 10px 0 0;
+            padding: 0;
+            color: #a7a7a7;
+        }
+
+        .seo .seo_links a,
+        .seo .seo_links a:visited {
+            margin-right: 6px;
+            text-decoration: none;
+            color: #a7a7a7;
+        }
+
+        .seo .seo_links dt {
+            float: left;
+            padding-left: 25px;
+            font-weight: 700;
+        }
+
+        .seo .seo_links dd {
+            margin-left: 88px;
+            padding: 0;
+            word-spacing: 5px;
+        }
+
+        .seo .seo_links dd span {
+            float: left;
+            margin-right: 6px;
+            white-space: nowrap;
+        }
+
+        .seo .seo_links dd .clr {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+    <div class="cr">
+        <div class="links">
+            <div class="fh-about" onmouseover="this.className+=' hover'"
+                 onmouseout="this.className=this.className.replace(/\shover/g,'')"><a
+                    href="http://www.qunar.com/site/zh/Qunar.in.China_1.2.shtml" target="_blank" rel="nofollow"
+                    class="about-link">关于Qunar.com</a><i></i>
+                <div class="fh-list-wrapper">
+                    <div class="fh-list"><a href="http://www.qunar.com/site/zh/ContactUs_3.shtml" target="_blank"
+                                            rel="nofollow">联系我们</a> <a href="http://www.qunar.com/site/zh/Rules.shtml"
+                                                                       target="_blank" rel="nofollow">用户协议</a> <a
+                            href="http://www.qunar.com/site/zh/Question_7.shtml" target="_blank" rel="nofollow">常见问题</a><a
+                            href="http://www.qunar.com/site/zh/Links_8.shtml" target="_blank" rel="nofollow">友情链接</a>
+                    </div>
+                </div>
+            </div>
+            <span>|</span><a href="http://www.qunar.com/site/zh/Cooperate_4.shtml" target="_blank"
+                             rel="nofollow">业务合作</a><span>|</span><a href="http://qunar.zhiye.com/" target="_blank"
+                                                                     rel="nofollow">加入我们</a><span>|</span><a
+                href="http://help.qunar.com/complaint.html" class="" target="_blank"
+                rel="nofollow">"严重违规失信"专项整治举报</a><span>|</span><a href="http://security.qunar.com" target="_blank"
+                                                                  rel="nofollow">安全中心</a><span>|</span><a
+                href="http://www.qunar.com/commonweal/index.html" target="_blank">星骆驼公益</a><span>|</span><a
+                href="http://www.qunar.com/site/en/Qunar.in.China_1.1.shtml" target="_blank" rel="nofollow">About Us</a>
+        </div>
+        <p class="copyright"><span>Copyright ©2019 Qunar.com</span><a href="http://www.beian.gov.cn" target="_blank"
+                                                                      rel="nofollow">京公网安备110108901530</a><a
+                href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action" target="_blank" rel="nofollow">京ICP备05021087号</a><a
+                href="http://www.qunar.com/site/company_info.htm" target="_blank" rel="nofollow">营业执照信息</a><a
+                href="http://baoxian.qunar.com/html/notify_zct.html" target="_blank" rel="nofollow">保险经纪资质</a><a
+                href="http://www.qunar.com/site/company_drug_info.htm" target="_blank"
+                rel="nofollow">(京)-非经营性-2016-0110</a><span class="s24">去哪儿网客服电话95117</span></p>
+        <p class="copyright"><span>违法和不良信息举报电话：010-69194277</span><span>违法和不良信息举报邮箱：tousu@qunar.com</span></p>
+    </div>
+    <div class="f_imglist">
+        <ul>
+            <li><a href="https://cn.globalsign.com/" target="_blank" rel="nofollow"><img
+                    src="//s.qunarzz.com/hf/approve/globalsign.gif" height="30"></a></li>
+            <li class="f_icon_pci"><a
+                    href="http://www.atsec.cn/cn/pci-attestation/Qunar-PCIAttestation-atsec-PCI-DSS-C-65221.jpg"
+                    target="_blank" rel="nofollow" title="去哪儿网通过PCI认证"></a></li>
+            <li class="f_icon_itrust"><a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1786892425" target="_blank"
+                                         rel="nofollow" title="信用编码：1786892425"></a></li>
+            <li class="f_icon_beian"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202007112700003"
+                                        target="_blank" rel="nofollow" title="经营性网站备案信息"></a></li>
+            <li class="f_icon_cnnic"><a
+                    href="https://ss.knet.cn/verifyseal.dll?sn=e131022110100429697dhp000000&amp;ct=df&amp;a=1&amp;pa=500267"
+                    target="_blank" rel="nofollow" title="可信网站身份验证"></a></li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+    <script> (function () {
+        var i = new Image();
+        i.src = "//user.qunar.com/passport/addICK.jsp" + (document.location.protocol === "https:" ? "?ssl" : "");
+    })(); </script>
+</div>
+<script type='text/javascript' src='//r01.uzaicdn.com/content/libs/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='//r03.uzaicdn.com/content/store/scripts/common/jquery.lazyload.js'></script>
+<script type='text/javascript'
+        src='//r01.uzaicdn.com/content/store/scripts/common/idangerous.swiper2.7.6.min.js'></script>
+<script type='text/javascript' src='//r02.uzaicdn.com/content/store/scripts/common/core.js'></script>
+<!--<script type='text/javascript' src='//r01.uzaicdn.com/content/store/scripts/common/meiqia.js'  ></script>-->
+<script type='text/javascript' src='//r01.uzaicdn.com/content/store/scripts/common/statistics.js'></script>
+<script type='text/javascript' src='//r02.uzaicdn.com/content/store/scripts/common/uaredirect.js'></script>
+<script type='text/javascript' src='//r.uzaicdn.com/content/store/scripts/index/index.js'></script>
+<style type="text/css">
+    .agl-hover {
+        outline: 2px solid rgba(244, 67, 54, 0.99) !important;
+        background-color: rgba(244, 67, 54, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .agl-highlight-current {
+        outline: 2px solid rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-similar {
+        outline: 2px dashed rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-group {
+        outline: 4px double rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-cover-current {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px solid rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-similar {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px dashed rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-group {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 4px double rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-focus {
+        outline: 3px solid rgba(255, 165, 0, 0.99) !important;
+        background-color: rgba(255, 165, 0, 0.4) !important;
+    }
+</style>
+</body>
+</html>

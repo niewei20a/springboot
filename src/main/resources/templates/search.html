@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>去哪玩儿</title>
+    <link rel="icon" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link rel="bookmark" type="image/x-icon" href="//r.uzaicdn.com/content/store/images/common/utour.ico"/>
+    <link href='//r.uzaicdn.com/content/libs/iconfont.css' rel='stylesheet'/>
+    <link href='//r03.uzaicdn.com/content/store/styles/common/idangerous.swiper2.7.6.css' rel='stylesheet'/>
+    <link href='//r02.uzaicdn.com/content/store/styles/common/core.css' rel='stylesheet'/>
+    <link href='//r02.uzaicdn.com/content/store/styles/index/index.css' rel='stylesheet'/>
+    <link href='//r01.uzaicdn.com/content/store/styles/search/list.css' rel='stylesheet'/>
+
+    <style type="text/css" id="MEIQIA-ICON-STYLE">
+        .MEIQIA-ICON {
+            background-size: 40px auto !important;
+            background-repeat: no-repeat !important;
+            background-image: url('https://resource.meiqia.com/dist/images/icon-mq.png?v=jih3az2eoia') !important;
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
+            .MEIQIA-ICON {
+                background-image: url('https://resource.meiqia.com/dist/images/icon-mq@2x.png?v=jih3az2eoia') !important;
+            }
+        }
+
+        .MEIQIA-ICON-CHAT1 {
+            background-position: 0 0 !important;
+        }
+
+        .MEIQIA-ICON-CHAT2 {
+            background-position: 0 -20px !important;
+        }
+
+        .MEIQIA-ICON-CHAT3 {
+            background-position: 0 -40px !important;
+        }
+
+        .MEIQIA-ICON-CHAT4 {
+            background-position: 0 -60px !important;
+        }
+
+        .MEIQIA-ICON-CHAT5 {
+            background-position: 0 -80px !important;
+        }
+
+        .MEIQIA-ICON-CHAT6 {
+            background-position: 0 -100px !important;
+        }
+
+        .MEIQIA-ICON-CHAT7 {
+            background-position: 0 -120px !important;
+        }
+
+        .MEIQIA-ICON-CHAT8 {
+            background-position: 0 -140px !important;
+        }
+
+        .MEIQIA-ICON-CHAT9 {
+            background-position: 0 -160px !important;
+        }
+
+        .MEIQIA-ICON-CHAT10 {
+            background-position: 0 -180px !important;
+        }
+
+        .MEIQIA-ICON-CHAT11 {
+            background-position: 0 -200px !important;
+        }
+
+        .MEIQIA-ICON-CHAT12 {
+            background-position: 0 -220px !important;
+        }
+
+        .MEIQIA-ICON-TICKET1 {
+            background-position: -20px 0 !important;
+        }
+
+        .MEIQIA-ICON-TICKET2 {
+            background-position: -20px -20px !important;
+        }
+
+        .MEIQIA-ICON-TICKET3 {
+            background-position: -20px -40px !important;
+        }
+
+        .MEIQIA-ICON-TICKET4 {
+            background-position: -20px -60px !important;
+        }
+
+        .MEIQIA-ICON-TICKET5 {
+            background-position: -20px -80px !important;
+        }
+
+        .MEIQIA-ICON-TICKET6 {
+            background-position: -20px -100px !important;
+        }
+
+        .MEIQIA-ICON-TICKET7 {
+            background-position: -20px -120px !important;
+        }
+
+        .MEIQIA-ICON-TICKET8 {
+            background-position: -20px -140px !important;
+        }
+
+        .MEIQIA-ICON-TICKET9 {
+            background-position: -20px -160px !important;
+        }
+
+        .MEIQIA-ICON-TICKET10 {
+            background-position: -20px -180px !important;
+        }
+
+        .MEIQIA-ICON-TICKET11 {
+            background-position: -20px -200px !important;
+        }
+
+        .MEIQIA-ICON-TICKET12 {
+            background-position: -20px -220px !important;
+        } </style>
+    <style type="text/css"
+           id="MEIQIA-INVITE-STYLE">#MEIQIA-INVITE, #MEIQIA-INVITE div, #MEIQIA-INVITE img, #MEIQIA-INVITE a {
+        float: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+
+    #MEIQIA-INVITE {
+        display: none;
+        position: fixed;
+        margin: -105px 0 0 -210px;;
+        top: 50%;
+        left: 50%;
+        z-index: 2147483647;
+        width: 420px;
+        height: 210px;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-BG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTIONS {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTION-0 {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 357px;
+        height: 210px;
+        cursor: pointer;
+        background-image: url(about:blank);
+    / / 解决 IE10 以下空的 absolute a 标签无法响应 click 的问题
+    }
+
+    #MEIQIA-INVITE #MEIQIA-INVITE-ACTION-1 {
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 359px;
+        width: 62px;
+        height: 19px;
+        cursor: pointer;
+        background-image: url(about:blank);
+    / / 解决 IE10 以下空的 absolute a 标签无法响应 click 的问题
+    }  </style>
+    <style type="text/css" id="MEIQIA-BTN-STYLE">#MEIQIA-BTN-HOLDER {
+        display: none;
+        position: fixed;
+        bottom: 350px;
+        right: 0px;
+        z-index: 2147483647;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        background-color: transparent;
+    }
+
+    #MEIQIA-BTN, #MEIQIA-BTN span, #MEIQIA-BTN div, #MEIQIA-BTN img {
+        float: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: none;
+    }
+
+    #MEIQIA-BTN {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BTN-PICTURE {
+        display: block;
+        border: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-CIRCLE {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE {
+        position: absolute;
+        bottom: 0;
+        display: none;
+        width: 260px;
+        border: 1px solid #f7f7f7;
+        border-radius: 4px;
+        color: #000;
+        text-align: left;
+        box-shadow: 0 0 14px 0 rgba(0, 0, 0, .16);
+        line-height: 1.428571429;
+        background-color: #fff;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW1 {
+        position: absolute;
+        z-index: 2;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW2 {
+        position: absolute;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE {
+        left: 0;
+        margin-left: -274px;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW1 {
+        right: -8px; /*top: 42px;*/
+        bottom: 20px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 8px solid #fff;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-ARROW2 {
+        right: -10px; /*top: 43px;*/
+        bottom: 21px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 9px solid #f7f7f7;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-CLOSE {
+        position: absolute;
+        display: none;
+        top: 12px;
+        right: 12px;
+        width: 10px;
+        height: 10px;
+        background-position: -5px -245px;
+        cursor: pointer;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE:hover #MEIQIA-BUBBLE-CLOSE {
+        display: block;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-INSIDE {
+        margin: 12px 18px;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-AVATAR {
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        margin-right: 6px;
+        vertical-align: top;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, .15);
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-NAME {
+        display: inline-block;
+        margin-top: 3px;
+        font-size: 16px;
+        color: #000;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-MSG {
+        height: 40px;
+        margin-top: 5px;
+        font-size: 14px;
+        overflow: hidden;
+        color: #000;
+    }
+
+    #MEIQIA-BTN #MEIQIA-BUBBLE-MSG img {
+        width: 16px;
+        height: 16px;
+    } </style>
+    <style type="text/css" id="MEIQIA-PANEL-STYLE">#MEIQIA-PANEL-HOLDER {
+        position: fixed;
+        bottom: 0;
+        right: 60px;
+        z-index: -1;
+        width: 320px;
+        height: 480px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        visibility: hidden;
+        background-color: transparent;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+        border: 1px solid #eee \0;
+        *border: 1px solid #eee;
+    }
+
+    #MEIQIA-IFRAME {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        float: none;
+        background: none;
+    } </style>
+</head>
+<body>
+<div class="publicTopW">
+    <div class="common_top">
+        <div class="top_m">
+            <div class="top_m_r"><a href="#" target="_blank"><i class="iconfont icon-vip"></i>
+                会员俱乐部</a><a
+                    href="//u.uzai.com/personal/myorder" target="_blank" class="paddl26">我的订单</a><a
+                    href="//www.uzai.com/aboutus/salesnetwork"
+                    target="_blank" class="paddl26 red">营业网点</a>
+                <div class="top_server"><a href="#">服务中心 <i class="iconfont icon-zhankai"></i><i
+                        class="iconfont icon-shouqi"></i></a>
+                    <div class="clear"></div>
+                    <div class="ul"><a href="//www.uzai.com/aboutus/companyprofile" target="_blank">关于我们</a><a
+                            href="//www.uzai.com/aboutus/businesscooperation"
+                            target="_blank">商务合作</a><a href="//www.uzai.com/aboutus/contactus"
+                                                       target="_blank">联系我们</a><a href="//www.uzai.com/aboutus/joinus"
+                                                                                  target="_blank">诚聘英才</a></div>
+                </div>
+            </div>
+            <div class="top_m_l"><a th:href="@{/login}"><i class="iconfont icon-yonghu"></i>登录</a><a
+                    class="paddl0">|</a><a
+                    th:href="@{/register}"><i class="iconfont icon-zhuce"></i>注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="common_head">
+        <a href="#"><img src="http://source.qunarzz.com/common/hf/logo.png" class="logo"/></a>
+        <div class="search">
+            <div class="search_bot" th:onclick=""><i class="iconfont icon-sousuo"></i></div>
+            <input type="text"
+                   class="search_input" id="index_search_input" attr-href="https://search.uzai.com/all/1/0/0/s0-f1/"
+                   placeholder="年中618 立减￥618"/><input
+                type="hidden" id="index_search_input_last_value"/>
+            <div id="searchQuickInput"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="common_nav">
+        <ul>
+            <li id="channel_1"><a th:href="@{/trip}"><i class="iconfont icon-yuandian"></i>首页</a></li>
+            <!--            <li id="channel_2"><a href="#"><i class="iconfont icon-yuandian"></i>自驾游</a></li>-->
+            <!--            <li id="channel_3"><a href="#"><i class="iconfont icon-yuandian"></i>国内游</a></li>-->
+            <!--            <li id="channel_4"><a href="#"><i class="iconfont icon-yuandian"></i>出境游</a></li>-->
+            <div class="clear"></div>
+        </ul>
+        <div class="ul" style="display: none;"></div>
+    </div>
+</div>
+<div class="" id="headDiv" avalonctrl="demo">
+    <div class="main">
+        <div class="main_top_t">
+            <div class="main_top_t_right">
+                <div class="price_text">¥<input type="text" id="jgfw1" onkeyup="value=value.replace(/[^\d]/g,'') "
+                                                maxlength="6"></div>
+                <div class="line"> -</div>
+                <div class="price_text">¥<input type="text" id="jgfw2" onkeyup="value=value.replace(/[^\d]/g,'') "
+                                                maxlength="6"></div>
+                <div class="sure" onclick="search.priceEvent()">确定</div>
+                <div class="clear"></div>
+            </div>
+            <div class="default red J_sort" id="sort_defalut">默认</div>
+            <div class="sales_volume J_sort">销量<i class="iconfont icon-xiaoliangpaixu"></i></div>
+            <div class="price J_sort">价格<i class="iconfont icon-jiagepaixu"></i></div>
+            <div id="self_support" class="self_support"><i class="iconfont icon-fangxuankuang"></i> 众信自营</div>
+            <div id="discount" class="self_support red"><i class="iconfont icon-check1"></i> 只看优惠</div>
+        </div>
+        <div class="main_left">
+            <div class="main_left1" th:each="TripShort:${key}" >
+                <a href="//www.uzai.com/tours/00005508.html" target="_blank">
+                    <div class="imageWarp">
+                        <img class="left lazy" th:src="@{'/image_cache/'+${TripShort.getPicture()}}" style="display: block;"></div>
+                    <div class="main_left1_r">
+                        <div class="main_left1_rl">
+                            <h2 th:title="${TripShort.getTitle()}">
+                                <b th:text="${TripShort.getStitle()}"></b><b><span th:text="${TripShort.getTitle()}"></span></b>
+                            </h2>
+                            <div class="place_departure">
+                                <i class="iconfont icon-zuobiao"></i>
+                                <span class="red" th:text="${TripShort.getCity()}"></span>
+                                <em> | </em>
+                            </div>
+                            <div class="departure_date">出发日期：<span
+                                    title="06/22 06/25 06/28 07/06 07/20 07/22 07/23 07/25 07/26 07/28 07/29 07/31 08/01 08/05 08/08 08/09 08/11 08/13 08/15 08/18 08/23 08/26">06/22   06/25   06/28   07/06   07/20   07/22   ...</span>
+                            </div>
+                            <div class="discount">
+                                <div class="discount_icon">
+                                    优惠
+                                    <div class="discount_icon_p">
+                                        <p><i>·</i><b>限时返场立减￥618</b></p>
+                                    </div>
+                                </div>
+                                <span>限时返场立减￥618｜特价抢购，立减1000元/人</span>
+                            </div>
+                        </div>
+                        <div class="main_left1_rr_tab">
+                            <div class="price">¥<b th:text="${TripShort.getPrice()}"></b><span>起</span></div>
+                            <div class="province"><i>省</i><b th:text="${TripShort.getPrice()}/2"></b>元</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--分页模块-->
+            <div class="page">
+                <!--MvcPager v3.0.1 for ASP.NET MVC 4.0+ © 2009-2015 Webdiyer (http://en.webdiyer.com)-->
+                <div data-invalidpageerrmsg="Page index is invalid" data-outrangeerrmsg="Page index is out of range"
+                     data-pagecount="26" data-pageparameter="page" data-pagerid="Webdiyer.MvcPager"
+                     data-urlformat="/all/__page__/0/0/s0-f1/"><a class="disabled">首页</a><a class="disabled">上一页</a><a
+                        href="javascript:void(0)" class="active">1</a><a href="/all/2/0/0/s0-f1/">2</a>&nbsp;<a
+                        href="/all/3/0/0/s0-f1/">3</a>&nbsp;<a href="/all/4/0/0/s0-f1/">4</a>&nbsp;<a
+                        href="/all/5/0/0/s0-f1/">5</a>&nbsp;<a href="/all/6/0/0/s0-f1/">6</a>&nbsp;<a
+                        href="/all/7/0/0/s0-f1/">7</a>&nbsp;<a href="/all/8/0/0/s0-f1/">8</a>&nbsp;<a
+                        href="/all/9/0/0/s0-f1/">9</a>&nbsp;<a href="/all/10/0/0/s0-f1/">10</a>&nbsp;<a
+                        href="/all/11/0/0/s0-f1/">...</a>&nbsp;<a href="/all/2/0/0/s0-f1/">下一页</a>&nbsp;<a
+                        href="/all/26/0/0/s0-f1/">末页</a>&nbsp;
+                </div>
+                <!--MvcPager v3.0.1 for ASP.NET MVC 4.0+ © 2009-2015 Webdiyer (http://en.webdiyer.com)-->
+            </div>
+            <!--猜你喜欢列表-->
+            <div class="like" style="display:none" id="LikeRecommendAera">
+                <div class="like_top">
+                    <div class="like_top_r">换一换<i class="iconfont icon-huanyipi"></i></div>
+                    <div class="like_top_t"><i class="iconfont icon-cainixihuan"></i>猜你喜欢</div>
+                </div>
+                <div class="like_m">
+                    <!--repeat030246534547--><!--repeat030246534547:end-->
+                </div>
+            </div>
+        </div>
+        <div class="main_right">
+            <!--特惠产品列表-->
+            <div style="display:none" id="preferentialProductAera">
+                <div class="main_right_t"><i class="iconfont icon-tehuichanpin"></i>特惠产品</div>
+                <!--repeat922018051606--><!--repeat922018051606:end-->
+            </div>
+
+            <!--广告列表-->
+            <div style="" id="searchAdAera">
+                <!--repeat162049584653-->
+                <div>
+                    <div class="main_right2">
+                        <a target="_blank" href="https://search.uzai.com/all/1/0/0/s0-f1/">
+                            <img width="100%"
+                                 src="https://img7.uzaicdn.com/uz/advertisement/ATT0000967200.jpg?imageView2/1/w/210/h/260/format/jpg">
+                        </a>
+                    </div>
+                </div><!--repeat162049584653-->
+                <div>
+                    <div class="main_right2">
+                        <a target="_blank" href="https://event.uzai.com/subject/bjshq/shqynd.htm">
+                            <img width="100%"
+                                 src="https://img7.uzaicdn.com/uz/advertisement/ATT0000967204.jpg?imageView2/1/w/210/h/260/format/jpg">
+                        </a>
+                    </div>
+                </div><!--repeat162049584653:end-->
+            </div>
+
+            <!--浏览历史-->
+            <div style="display:none" id="browseHistoryAera">
+                <div class="main_right3_top">
+                    <a href="#" class="more">更多</a>
+                    <i class="iconfont icon-lishijilu"></i>浏览历史
+                </div>
+                <!--repeat97742646752--><!--repeat97742646752:end-->
+            </div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="common_foot">
+    <ul>
+        <li><i class="iconfont icon-chanpinyouzhi"></i> 产品优质</li>
+        <li><i class="iconfont icon-xinxitouming"></i> 信息透明</li>
+        <li><i class="iconfont icon-yueding"></i> 履行约定</li>
+        <li><i class="iconfont icon-weihuquanyi"></i> 维护权益</li>
+        <li><i class="iconfont icon-xianhangpeifu"></i> 先行赔付</li>
+    </ul>
+</div>
+<div class="qn_footer">
+    <style type="text/css">
+        .qn_footer .copyright {
+            padding: 7px 0 0;
+            line-height: 22px;
+            margin: 0;
+        }
+
+        .qn_footer .copyright span, .qn_footer .copyright a, .qn_footer .copyright a:visited {
+            margin-right: 7px;
+            padding: 2px 0;
+            color: #999;
+            text-decoration: none;
+        }
+
+        .qn_footer .copyright .s24 {
+            background: url(//source.qunarzz.com/common/hf/24h.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .qn_footer .fh-about {
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            width: 110px;
+            text-align: left;
+            border: 1px solid transparent;
+            _border: 0;
+            _padding: 1px;
+            white-space: nowrap;
+        }
+
+        .qn_footer .fh-about a {
+            padding-left: 6px;
+        }
+
+        .qn_footer .fh-about .about-link {
+            margin: 0;
+            *zoom: 1;
+        }
+
+        .qn_footer .fh-about.hover {
+            border: 1px solid #ddd;
+            padding: 0;
+            z-index: 999;
+            background: #fff;
+        }
+
+        .qn_footer .fh-about.hover .about-link {
+            color: #ff9e5e;
+            margin: 0;
+        }
+
+        .qn_footer .fh-about.hover .fh-list {
+            display: block !important;
+        }
+
+        .qn_footer .fh-about .fh-list {
+            position: absolute;
+            left: -1px;
+            bottom: 22px;
+            border: 1px solid #ddd;
+            background: #fff;
+            width: 110px;
+            display: none;
+            white-space: normal;
+        }
+
+        .qn_footer .fh-about .fh-list a {
+            display: block;
+            margin: 0;
+            *margin: 0 !important;
+            *width: 70%;
+        }
+
+        .qn_footer .fh-about .fh-list a:hover {
+            color: #666;
+            background: #e2e2e2;
+            *background: #fff;
+            *color: #ff9e5e;
+        }
+
+        .qn_footer .fh-about i {
+            font-size: 0;
+            background: url(//source.qunarzz.com/common/hf/arc.png) no-repeat left bottom;
+            width: 7px;
+            height: 4px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin: 0 0 2px 3px;
+        }
+
+        .qn_footer .fh-about.hover i {
+            background-position: 0 0;
+        }
+
+        .qn_footer .fh-list-wrapper {
+            height: 0;
+            position: relative;
+            z-index: 999;
+            *float: left;
+        }
+
+        .qn_footer {
+            clear: both;
+            margin: 0 auto;
+            padding: 15px 0 25px;
+            width: 979px;
+            line-height: 1.231;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #848484;
+        }
+
+        .qn_footer .inner {
+            margin: 0 10px;
+            text-align: right;
+        }
+
+        .qn_footer .gs {
+            float: right;
+            margin: 0 20px 0 0;
+        }
+
+        .qn_footer .cr {
+            margin-right: 0;
+            padding-bottom: 11px;
+            text-align: center;
+        }
+
+        .qn_footer .links {
+            margin: 0;
+            padding: 2px 0 0;
+            list-style: none;
+            color: #999;
+            display: block;
+        }
+
+        .qn_footer .links span {
+            *display: inline;
+            *zoom: 1;
+        }
+
+        .qn_footer .links a,
+        .qn_footer .links a:visited {
+            padding: 0 5px;
+            margin: 0;
+            text-decoration: none;
+            color: #999;
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            height: 22px;
+            line-height: 22px;
+            white-space: nowrap;
+        }
+
+        .qn_footer .links a:hover {
+            color: #f60;
+        }
+
+        .qn_footer .links a.hl,
+        .qn_footer .links a.hl:visited {
+            color: #ff5555;
+        }
+
+        .qn_footer .clr {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .qn_footer .f_imglist {
+            margin-bottom: 10px;
+        }
+
+        .qn_footer .f_imglist ul {
+            width: 442px;
+            margin: 0 auto;
+            padding-bottom: 4px;
+            overflow: hidden;
+        }
+
+        .qn_footer .f_imglist li {
+            float: left;
+            margin-right: 10px;
+            display: inline;
+        }
+
+        .qn_footer .f_imglist li a {
+            display: block;
+            width: 100%;
+            height: 30px;
+        }
+
+        .qn_footer .f_imglist li a span, .qn_footer .f_imglist li.f_icon_pata span {
+            position: relative;
+            z-index: -1;
+            color: #0086A0;
+        }
+
+        .qn_footer .f_imglist .f_icon_cnnic {
+            width: 88px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -431px 0 no-repeat;
+            margin-right: 0;
+        }
+
+        .qn_footer .f_imglist .f_icon_ec {
+            width: 87px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -339px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_beian {
+            width: 78px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -256px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_itrust {
+            width: 91px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -160px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_pci {
+            width: 49px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) -106px 0 no-repeat;
+        }
+
+        .qn_footer .f_imglist .f_icon_verisign {
+            width: 101px;
+            height: 30px;
+            background: url(//source.qunarzz.com/common/hf/footer_v10.png) 0 0 no-repeat;
+        }
+
+        .seo {
+            border-top: 1px solid #ddd;
+        }
+
+        .seo .seo_links {
+            clear: both;
+            margin: 10px 0 0;
+            padding: 0;
+            color: #a7a7a7;
+        }
+
+        .seo .seo_links a,
+        .seo .seo_links a:visited {
+            margin-right: 6px;
+            text-decoration: none;
+            color: #a7a7a7;
+        }
+
+        .seo .seo_links dt {
+            float: left;
+            padding-left: 25px;
+            font-weight: 700;
+        }
+
+        .seo .seo_links dd {
+            margin-left: 88px;
+            padding: 0;
+            word-spacing: 5px;
+        }
+
+        .seo .seo_links dd span {
+            float: left;
+            margin-right: 6px;
+            white-space: nowrap;
+        }
+
+        .seo .seo_links dd .clr {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+    <div class="cr">
+        <div class="links">
+            <div class="fh-about" onmouseover="this.className+=' hover'"
+                 onmouseout="this.className=this.className.replace(/\shover/g,'')"><a
+                    href="http://www.qunar.com/site/zh/Qunar.in.China_1.2.shtml" target="_blank" rel="nofollow"
+                    class="about-link">关于Qunar.com</a><i></i>
+                <div class="fh-list-wrapper">
+                    <div class="fh-list"><a href="http://www.qunar.com/site/zh/ContactUs_3.shtml" target="_blank"
+                                            rel="nofollow">联系我们</a> <a href="http://www.qunar.com/site/zh/Rules.shtml"
+                                                                       target="_blank" rel="nofollow">用户协议</a> <a
+                            href="http://www.qunar.com/site/zh/Question_7.shtml" target="_blank" rel="nofollow">常见问题</a><a
+                            href="http://www.qunar.com/site/zh/Links_8.shtml" target="_blank" rel="nofollow">友情链接</a>
+                    </div>
+                </div>
+            </div>
+            <span>|</span><a href="http://www.qunar.com/site/zh/Cooperate_4.shtml" target="_blank"
+                             rel="nofollow">业务合作</a><span>|</span><a href="http://qunar.zhiye.com/" target="_blank"
+                                                                     rel="nofollow">加入我们</a><span>|</span><a
+                href="http://help.qunar.com/complaint.html" class="" target="_blank"
+                rel="nofollow">"严重违规失信"专项整治举报</a><span>|</span><a href="http://security.qunar.com" target="_blank"
+                                                                  rel="nofollow">安全中心</a><span>|</span><a
+                href="http://www.qunar.com/commonweal/index.html" target="_blank">星骆驼公益</a><span>|</span><a
+                href="http://www.qunar.com/site/en/Qunar.in.China_1.1.shtml" target="_blank" rel="nofollow">About Us</a>
+        </div>
+        <p class="copyright"><span>Copyright ©2019 Qunar.com</span><a href="http://www.beian.gov.cn" target="_blank"
+                                                                      rel="nofollow">京公网安备110108901530</a><a
+                href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action" target="_blank" rel="nofollow">京ICP备05021087号</a><a
+                href="http://www.qunar.com/site/company_info.htm" target="_blank" rel="nofollow">营业执照信息</a><a
+                href="http://baoxian.qunar.com/html/notify_zct.html" target="_blank" rel="nofollow">保险经纪资质</a><a
+                href="http://www.qunar.com/site/company_drug_info.htm" target="_blank"
+                rel="nofollow">(京)-非经营性-2016-0110</a><span class="s24">去哪儿网客服电话95117</span></p>
+        <p class="copyright"><span>违法和不良信息举报电话：010-69194277</span><span>违法和不良信息举报邮箱：tousu@qunar.com</span></p>
+    </div>
+    <div class="f_imglist">
+        <ul>
+            <li><a href="https://cn.globalsign.com/" target="_blank" rel="nofollow"><img
+                    src="//s.qunarzz.com/hf/approve/globalsign.gif" height="30"></a></li>
+            <li class="f_icon_pci"><a
+                    href="http://www.atsec.cn/cn/pci-attestation/Qunar-PCIAttestation-atsec-PCI-DSS-C-65221.jpg"
+                    target="_blank" rel="nofollow" title="去哪儿网通过PCI认证"></a></li>
+            <li class="f_icon_itrust"><a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1786892425" target="_blank"
+                                         rel="nofollow" title="信用编码：1786892425"></a></li>
+            <li class="f_icon_beian"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202007112700003"
+                                        target="_blank" rel="nofollow" title="经营性网站备案信息"></a></li>
+            <li class="f_icon_cnnic"><a
+                    href="https://ss.knet.cn/verifyseal.dll?sn=e131022110100429697dhp000000&amp;ct=df&amp;a=1&amp;pa=500267"
+                    target="_blank" rel="nofollow" title="可信网站身份验证"></a></li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+    <script> (function () {
+        var i = new Image();
+        i.src = "//user.qunar.com/passport/addICK.jsp" + (document.location.protocol === "https:" ? "?ssl" : "");
+    })(); </script>
+</div>
+
+<style type="text/css">
+    .agl-hover {
+        outline: 2px solid rgba(244, 67, 54, 0.99) !important;
+        background-color: rgba(244, 67, 54, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .agl-highlight-current {
+        outline: 2px solid rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-similar {
+        outline: 2px dashed rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-group {
+        outline: 4px double rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-cover-current {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px solid rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-similar {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px dashed rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-group {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 4px double rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-focus {
+        outline: 3px solid rgba(255, 165, 0, 0.99) !important;
+        background-color: rgba(255, 165, 0, 0.4) !important;
+    }
+</style>
+<script type='text/javascript' src='//r01.uzaicdn.com/content/libs/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='//r03.uzaicdn.com/content/store/scripts/common/jquery.lazyload.js'></script>
+<script type='text/javascript'
+        src='//r01.uzaicdn.com/content/store/scripts/common/idangerous.swiper2.7.6.min.js'></script>
+<script type='text/javascript' src='//r02.uzaicdn.com/content/store/scripts/common/core.js'></script>
+<!--<script type='text/javascript' src='//r01.uzaicdn.com/content/store/scripts/common/meiqia.js'  ></script>-->
+<script type='text/javascript' src='//r01.uzaicdn.com/content/store/scripts/common/statistics.js'></script>
+<script type='text/javascript' src='//r02.uzaicdn.com/content/store/scripts/common/uaredirect.js'></script>
+<script type='text/javascript' src='//r.uzaicdn.com/content/store/scripts/index/index.js'></script>
+<style type="text/css">
+    .agl-hover {
+        outline: 2px solid rgba(244, 67, 54, 0.99) !important;
+        background-color: rgba(244, 67, 54, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .agl-highlight-current {
+        outline: 2px solid rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-similar {
+        outline: 2px dashed rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-group {
+        outline: 4px double rgba(255, 87, 34, 0.99) !important;
+        background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-cover-current {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px solid rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-similar {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 2px dashed rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-group {
+
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 9 !important;
+
+        outline: 4px double rgba(33, 33, 33, 0.99) !important;
+        background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-focus {
+        outline: 3px solid rgba(255, 165, 0, 0.99) !important;
+        background-color: rgba(255, 165, 0, 0.4) !important;
+    }
+</style>
+</body>
+</html>
